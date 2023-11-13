@@ -1,0 +1,23 @@
+SELECT 직원ID, 연봉
+FROM 직원
+WHERE 직원ID = 'A0005' ;
+
+UPDATE 직원 SET 연봉 = 6000
+WHERE 직원ID = 'A0005' ;
+
+COMMIT ;
+
+ROLLBACK ; 
+
+SELECT *
+FROM (SELECT ROWNUM AS RN,
+직원ID, 이름, 연봉, 부서ID
+FROM 직원)
+WHERE RN = 3;
+
+SELECT *
+FROM(SELECT *
+     FROM 직원
+     WHERE 연봉 IS NOT NULL
+     ORDER BY 연봉 DESC) 
+WHERE ROWNUM <=5 ;

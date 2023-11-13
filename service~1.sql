@@ -1,0 +1,83 @@
+
+SELECT 직원ID, 입사일시, 주민등록번호, 연봉, 부서ID
+FROM 직원;
+
+SELECT *
+FROM 직원 ;
+
+SELECT *
+FROM 직원주소;
+
+SELECT DISTINCT 성별
+FROM 직원;
+
+SELECT *
+FROM 직원연락처;
+
+SELECT DISTINCT 직원ID
+FROM 직원연락처;
+
+SELECT 연봉 + 2500 AS 연봉
+FROM 직원; A;
+
+SELECT 직원ID, 나이, NVL(나이, 0)
+FROM 직원 ;
+
+SELECT *
+FROM 직원
+WHERE 나이 IS NOT NULL ;
+
+SELECT *
+FROM 직원
+WHERE 입사일시 IS NULL ;
+
+SELECT 직원ID,패스워드,NVL(나이, 20) AS 나이
+FROM 직원 ;
+
+SELECT 직원ID,성별,연봉 ,DECODE(성별,'남','남성입니다','여성입니다') AS 남녀확인
+FROM 직원 ;
+
+SELECT *
+FROM 직원;
+
+SELECT LOWER ('ABCDE123@@') AS LOWER사용
+FROM DUAL ;
+
+SELECT *
+FROM DUAL ;
+
+SELECT 패스워드, UPPER(패스워드)
+FROM 직원;
+
+SELECT 패스워드, SUBSTR(패스워드, 2, 3)
+FROM 직원;
+
+SELECT TRIM('     데이터    '),TRIM('     베    이    스    ')
+FROM DUAL ;
+
+SELECT 직원ID,주민등록번호, SUBSTR(주민등록번호, 1, 6) AS 생년월일
+FROM 직원 ;
+
+SELECT 직원ID,구분코드,연락처,REPLACE(연락처,'-','') AS 연락처번호만
+FROM 직원연락처 ;
+
+SELECT 연봉, MOD(연봉, 1000)
+FROM 직원;
+
+SELECT ROUND(1.452, 2), ROUND(1.452, 1)
+FROM DUAL ;
+
+SELECT ROUND(3.1415,3), CEIL(3.1415), FLOOR(3.1415), TRUNC(3.1415,3),ABS(-3.1415)
+FROM DUAL ;
+
+SELECT SYSDATE
+FROM DUAL;
+
+SELECT TO_NUMBER('1') FROM DUAL ;
+SELECT TO_CHAR(1) FROM DUAL ;
+SELECT TO_CHAR(SYSDATE, 'YYYY/MM/DD HH24:MI:SS') FROM DUAL ;
+SELECT TO_DATE ('20230101', 'YYYY/MM/DD') FROM DUAL;
+SELECT TO_DATE('20230101141212', 'YYYY/MM/DD HH24:MI:SS') FROM DUAL;
+
+SELECT '10' + 1000
+FROM DUAL ;
